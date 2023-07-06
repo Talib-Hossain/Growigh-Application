@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedActivity">
+
+    <View
+        android:id="@+id/gradientBox"
+        android:layout_width="414dp"
+        android:layout_height="216dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/button_gradient" />
+
+    <TextView
+        android:id="@+id/helloText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello,"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/noto_sans_regular"
+        app:layout_constraintTop_toTopOf="@id/gradientBox"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="17dp" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayush"
+        android:textSize="37sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/noto_sans_regular"
+        app:layout_constraintTop_toBottomOf="@id/helloText"
+        app:layout_constraintStart_toStartOf="@id/helloText" />
+
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="59dp"
+        android:background="@drawable/edit_text_background"
+        android:drawableStart="@drawable/search_icon"
+        android:layout_marginTop="31dp"
+        android:paddingStart="15dp"
+        android:hint="Explore"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintTop_toBottomOf="@id/nameText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ellipse_profile"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toTopOf="@id/gradientBox"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/browseByText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Browse By"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/noto_sans_regular"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintTop_toBottomOf="@id/gradientBox"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/latestButton"
+        android:layout_width="96dp"
+        android:layout_height="21dp"
+        android:text="Latest"
+        android:textAllCaps="false"
+        android:background="@drawable/browse_by_button"
+        android:textSize="11sp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintTop_toBottomOf="@id/browseByText"
+        app:layout_constraintStart_toStartOf="@id/browseByText"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/olderButton"
+        android:layout_width="96dp"
+        android:layout_height="21dp"
+        android:text="Older"
+        android:textAllCaps="false"
+        android:background="@drawable/browse_by_button"
+        android:textSize="11sp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintTop_toBottomOf="@id/browseByText"
+        app:layout_constraintStart_toEndOf="@id/latestButton"
+        android:layout_marginStart="10dp"/>
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/latestButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/news_item"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
